@@ -1,0 +1,34 @@
+{
+  "name": "ukoti",
+  "version": "0.0.1",
+  "description": "Domotic home project for PIC using serial port conection.",
+  "main": "index.js",
+  "keywords": [
+    "domotic",
+    "microcontroller",
+    "pic",
+    "programming",
+    "usart",
+    "serialport",
+    "nodejs",
+    "npm"
+  ],
+  "author": "Julio C. Málaga (caesar96)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "",
+    "jade": ""
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caesar96/ukoti.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caesar96/ukoti/issues"
+  },
+  "homepage": "https://github.com/caesar96/ukoti#readme"
+}

@@ -1,0 +1,478 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+/* AIOKoti CSS */
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* ----------- Adaptation -----*/
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    /* ----------------------------*/
+    margin: 0;
+    padding: 0;
+    background-image:url('../images/bg/bg3.png');
+    background-repeat: repeat;
+    background-position: center;
+    overflow: hidden;
+}
+#totalwb{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+/*  --------------------------- Top bar Content Style ------------------------------  */
+#top_bar {
+    height: 32px;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.5);
+    border-bottom: 3px solid #009CD0;
+    border-radius: 0 0 7px 7px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#top_bar #homeApps {
+    left: 0;
+    margin: 0 0 0 5px;
+    position: absolute;
+    top: 5px;
+}
+
+#top_bar #openedApps {
+    left: 46%;
+    position: absolute;
+    top: 5px;
+}
+#top_bar .textTopbar {
+    font-family: "Segoe UI", sans-serif, Arial, Tahoma;
+    font-size: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 4px;
+    text-shadow: 1px 1px 2px #000;
+    color: #fff;
+}
+#top_bar .textTopbar:hover {
+    border-radius: 7px;
+    background-color: #009CD0;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+#top_bar .textTopbar:active {
+    background-color: #ccc;
+    color: #000;
+    text-shadow: none;
+}
+
+#top_bar #statusDevice {
+    margin: 5px 5px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#top_bar #stateIcon {
+    background-position: center center;
+    border: 2px solid #333;
+    border-radius: 50px;
+    height: 16px;
+    width: 16px;
+}
+
+#top_bar .online {
+    background-color: #2AAE06;
+}
+#top_bar .offline {
+    background-color: red;
+}
+#top_bar .unknown {
+   background-color: gray;
+}
+
+/*  --------------------------- Apps Content Style ------------------------------  */
+#apps {
+    width: 100%;
+    background-color: transparent;
+    height: auto;
+    position: fixed;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 84px;
+    /*border: 2px solid #fff;*/
+    margin: 0;
+    padding: 0;
+}
+#appsContent {
+    height: 88%;
+    width: 100%;
+    min-width: 320px;
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 10px 1px 10px 1px;
+}
+#appsContent .box_item {
+    width: 55px;
+    height: 88px;
+    background: transparent;
+    /*border: 1px solid #fff;*/
+    border-radius: 10px;
+    margin:5px 5px  7px 4px;
+    display: block;
+    float: left;
+    cursor:pointer;
+}
+#appsContent .app_icon {
+    background-position:center;
+    background-repeat: no-repeat;
+    display: block;
+    /*background-image: url('/default.png');*/
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+#appsContent .app_icon:hover {
+    opacity: 1;
+}
+#appsContent .app_icon:active {
+    opacity: 0.5;
+}
+
+#appsContent .app_name {
+    color: #fff;
+    display: block;
+    font-family: "Segoe UI","Trebuchet MS",arial,tahoma,sans-serif;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+    margin: 5px auto 0;
+    width:100%;
+    text-transform: capitalize;
+}
+
+/** --------------------- Current Process ---------------------------------**/
+#process {
+    width: 98%;
+    background-color: #ddd;
+    height: auto;
+    position: fixed;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 84px;
+    border: 1px solid #ddd;
+    margin: auto;
+    padding: 0;
+}
+
+#process #processContent {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding:0;
+    height: 98%;
+    width: 99%;
+    margin: auto;
+}
+
+#process #processContent .proccessItem {
+    padding: 0.5em;
+}
+
+/* Apps */
+#luces {
+    background-color: #fafafa;
+    border: 2px dashed red;
+}
+#luces .bLeft, #luces .bRight    {
+    float: left;
+    width: 50%;
+    border: 2px solid #000;
+}
+
+/*  ------------------------- Opened Apps ---------------------------------  */
+#selected_item {
+    width: 100%;
+    height: 81px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 7px 7px 0 0;
+    border-top: 3px solid red;
+    z-index: 3;
+}
+
+#selected_item #appsSelectedOpened {
+    margin: auto;
+    padding: 1.5% 1px 1px;
+    width: 98%;
+    height: 70px;
+    text-align: center;
+    /*border: 2px dashed blue;*/
+    overflow-y: auto;
+    min-width: 320px;
+}
+#selected_item .app_item {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin:2px 5px 14px;
+    display: block;
+    float: left;
+    cursor:pointer;
+    box-shadow: 1px 2px 3px #009CD0;
+    padding: 4px;
+}
+#selected_item .app_icon {
+    background-position:center;
+    background-repeat: no-repeat;
+    display: block;
+    /*background-image: url('/default.png');*/
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    opacity: 0.8;
+    background-size: 40px 40px;
+}
+
+#selected_item .app_icon:hover {
+    opacity: 1;
+}
+#selected_item .app_icon:active {
+    /*-webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;*/
+    opacity: 0.5;
+}
+
+#selected_item .app_name {
+    color: #fff;
+    display: block;
+    font-family: "Segoe UI","Trebuchet MS",arial,tahoma,sans-serif;
+    font-size: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+    margin-top: 0;
+    width:100%;
+    margin-left: 1px;
+    text-transform: capitalize;
+}
+
+/*  --------------------------- Apps Icons ------------------------------  */
+.monitor {
+    background-image: url('../images/icons/turn_off_monitor.png');
+}
+.firefox {
+    background-image: url('../images/icons/firefox.png');
+}
+
+.popcorntime {
+    background-image: url('../images/icons/popcorntime.png');
+}
+
+.porntime {
+    background-image: url('../images/icons/porntime.png');
+}
+
+.spotify {
+    background-image: url('../images/icons/spotify.png');
+}
+.settings {
+    background-image: url('../images/icons/settings.png');
+}
+
+.home {
+    background-image: url('../images/icons/home.png');
+}
+/*  ---------------------------------------------------------------------  */
+.centerbox
+{
+     margin: 0 auto 5px;
+}
+
+.hidebox {
+    display: none;
+}
+
+#masknotify {
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.80) repeat;
+}
+/* -------------------- Nuevo estilo ----------------------*/
+#allbox {
+  min-height: 88%;
+  margin: 0;
+  padding:0;
+}
+#allbox.show {  display: flex; }
+
+#box {
+  margin: auto;
+  padding:0;
+  border-radius:10px;
+  background-color: #fff;
+  /*border:2px solid #ccc;*/
+  box-shadow: 1px 1px 20px #fafafa;
+ }
+
+#title {
+  border-bottom:1px solid #ddd;
+  background-color: #f0f0f0;
+  border-radius: 7px 7px 0 0;
+  font-family: "Segoe UI", "Trebuchet MS",Arial,sans-serif;
+  font-size:0.9em;
+  height:33px;
+  font-weight: bold;
+}
+
+#title .text {
+  padding:6px;
+  margin:2px auto;
+  float:left;
+}
+
+#title .close {
+    background: transparent url("../images/assets/title_close_active.png") no-repeat;
+    border-radius: 50px;
+    display: block;
+    float: right;
+    height: 16px;
+    margin: 8px 5px auto;
+    width: 16px;
+}
+#title .close:hover {
+    background: transparent url("../images/assets/title_close_hover.png") no-repeat;
+}
+#title .close:active {
+    background: transparent url("../images/assets/title_close_active.png") no-repeat;
+}
+
+#content {
+  clear:both;
+  padding:15px;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-size:14px;
+  text-align:center;
+  /*border-bottom: 1px solid #ddd;*/
+  outline: none;
+}
+#content input[type=text]#textAnswer {
+    display: block;
+    padding: 7px 1px;
+    margin: 22px auto 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-family: "Lucida Mac", sans-serif, Arial;
+    outline: 0;
+}
+#content input[type=text]#textAnswer:focus,
+#content input[type=text]#textAnswer:hover {
+    box-shadow: 0px 1px 15px 1px #07A;
+}
+
+#content #loadContent{
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+#content #loadContent.default {
+    background-image: url("../images/loaders/loader.gif");
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+}
+#content #loadContent.searching {
+    background-image: url("../images/loaders/searching.gif");
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+}
+#content #loadContent.lookupInternet {
+    background-image: url("../images/loaders/internet.gif");
+    background-size: 40px 31px;
+    height: 31px;
+    width: 40px;
+}
+
+#buttons #allbtn {
+  padding:4px 0;
+  background-color:#f0f0f0;
+  height:35px;
+  /*border-top:1px solid white;*/
+  width:auto;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0 0 7px 7px;
+}
+#buttons #allbtn div {
+  float:right;
+  padding:0.6em 1em;
+  margin:5px;
+  border-radius:7px;
+  cursor:default;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size:0.7em;
+  background-color: #111;
+  color:#fff;
+  text-shadow: 1px 1px 1px #000;
+}
+#buttons #allbtn div:hover {
+    background-color: #00CCF0;
+}
+#buttons #allbtn div:active {
+    background-color: #0098B3;
+}
+/* ------------- KIND OF BUTTONS --------*/
+#buttons #allbtn .wellok {
+  background-color: #2AAE06;
+  color: white;
+}
+#buttons #allbtn .cancel {
+    background-color: #E50202;
+}
+#buttons #allbtn .goTo{
+    cursor:pointer;
+    background-color: #F7CA00;
+}
+#buttons #allbtn .goTo a {
+    text-decoration: none;
+    color: #fff;
+}
+hr {
+    border-left-width:0;
+    border-right-width:0;
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:#ddd;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:#fff;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+}

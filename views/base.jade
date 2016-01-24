@@ -1,0 +1,58 @@
+doctype html
+html(lang="es_MX")
+    head
+        block cTitle
+            title AIOKoti
+        // Meta Data
+        meta(http-equiv="Content-Security-Policy", content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *")
+        meta(name="format-detection", content="telephone=no")
+        meta(name="msapplication-tap-highlight", content="no")
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1")
+        meta(charset="utf-8")
+        //CSS zone
+        link(rel="stylesheet", href="css/index.css", type="text/css")
+    body
+        //- TOPBAR
+        block cTopBar
+            #totalwb
+                #top_bar
+                    #homeApps
+                        span(id="appsStart").textTopbar Apps
+                    #openedApps
+                        span(id="appTitle").textTopbar Firefox
+                    #statusDevice(title="Dispositivo Apagado")
+                        #stateIcon.online
+
+        //- APPS/PROCESS CONTENT
+        block cAppProcess
+
+        //- SELECTED BAR
+        block cSelected
+            #selected_item
+                #appsSelectedOpened
+                    .app_item
+                        div(class="app_icon monitor")
+        //- MASK NOTIFY
+        block cMask
+            #masknotify.hidebox
+                #allbox.show
+                    #box
+                        #title.hidebox
+                            span.text
+                            span.close
+                        #content.hidebox
+                            #textMessage
+                            #loadContent(class="default").hidebox
+                            input(type="text" id="textAnswer" name="txtAnswer" style="display:none" value="" placeholder="Introduce valor indicado")
+                        #buttons.hidebox
+                            hr
+                            #allbtn
+                                div(class="goTo hidebox") Taringa.net!
+                                div(class="cancel hidebox") Cancelar
+                                div(class="wellok hidebox") Aceptar
+
+        // ********* Espacio para archivos/codigo javascript **************
+        script(type="text/javascript", src="js/jquery.js")
+        script(type="text/javascript" src="cordova.js")
+        script(type="text/javascript" src="js/index.js")
+        // ****************************************************************
